@@ -1,0 +1,8 @@
+class DevelopmentDataSource {
+    boolean pooling = true
+    String dbCreate = "update"
+    String url = "jdbc:mysql://localhost/addressbook_development"
+    String driverClassName = "com.mysql.jdbc.Driver"
+    String username = "root"
+    String password = ""
+}

@@ -1,0 +1,14 @@
+<action name="addresses" class="addressAction" method="list">    
+    <result>/WEB-INF/pages/addressList.jsp</result>    
+</action>  
+<action name="editAddress" class="addressAction" method="edit">    
+    <result>/WEB-INF/pages/addressForm.jsp</result>   
+    <result name="error">/WEB-INF/pages/addressList.jsp</result>   
+</action>   
+  
+<action name="saveAddress" class="addressAction" method="save">   
+    <result name="input">/WEB-INF/pages/addressForm.jsp</result>   
+    <result name="cancel" type="redirect">addresses.html</result>   
+    <result name="delete" type="redirect">addresses.html</result>   
+    <result name="success" type="redirect">addresses.html</result>   
+</action>

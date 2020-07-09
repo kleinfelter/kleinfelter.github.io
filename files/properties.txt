@@ -1,0 +1,14 @@
+# Kevin's stuff follows:
+address.id=Id   
+address.name=Name   
+address.street=Street
+address.city=City
+address.state=State
+address.zip=ZIP   
+address.added=Address has been added successfully.   
+address.updated=Address has been updated successfully.   
+address.deleted=Address has been deleted successfully.   
+addressList.title=Address List   
+addressList.heading=Addresses   
+addressDetail.title=Address Detail   
+addressDetail.heading=Address Information  

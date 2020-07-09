@@ -1,0 +1,278 @@
+Download and install Java EE 5 SDK Update 2 from http://java.sun.com/javaee/downloads/index.jsp
+	User=admin/password
+	admin-port=4848
+	HTTP-port=9090
+	HTTPS-port=9191
+	Tell it not to start (not sure how I did this; may have disabled the Service)
+
+Download Eclipse SDK 3.2.2 from http://www.eclipse.org/downloads/ and extract to C:\
+
+Add jdk\bin to your PATH
+
+Download and install Windows Essentials from http://dev.mysql.com/downloads/mysql/5.0.html#downloads.  Install to C:\MySQL
+	Transactional
+	Data files in C:\mysql-databases
+	Root password = password
+
+Start Eclipse, set C:\Code as your default workspace, add 
+	http://candy4appfuse.sf.net/site
+	http://commonclipse.sourceforge.net.as an update site, run update, select all available except Eclipse 3.2.1 patches
+
+Window/Preferences/Java/Commonclipse. Select the General tab. Uncheck Append super in hashCode() and Append super in equals(). Click OK. 
+
+
+In Eclipse
+
+	Window/Show View/Console
+	In the Package Explorer pane (left side), right-click and
+		New/Project/New AppFuse project, name it HelloAppFuse, Struts 2 Basic, group =com.kleinfelter
+	Wait. Wait some more.
+	Edit pom.xml, and set jdbc.password to password
+	Right-click the project in Package Explorer/Run As/Maven Build... (the one with ...)
+	In the "Goals:" text box, enter jetty:run-war
+	Click Run
+Browse to http://localhost:8080/
+
+Save the following as C:\code\HelloAppFuse\src\main\java\com\kleinfelter\model\Address.java (upper-case A)
+
+package com.kleinfelter.helloappfuse.model;
+import org.appfuse.model.BaseObject;   
+import javax.persistence.Entity;   
+import javax.persistence.GenerationType;   
+import javax.persistence.Id;   
+import javax.persistence.GeneratedValue;   
+import javax.persistence.Column;   
+
+
+@Entity
+public class Address extends BaseObject {
+    private Long id;
+    private String name;
+    private String street;
+    private String city;
+    private String state;
+    private String zip;
+    private String phone;
+    
+}
+
+
+Right-click the source/Generate Getters and Setters
+
+Select Address.java in Package Explorer, right-click/Source/"Generate hashCode() and equals()" and DE-select id.
+
+Right-click the source/Commonclipse/"Generate toString()"
+
+Edit src/main/resources/hibernate.cfg.xml for the basic archetypes and add after the other mapping rows:
+	<mapping class="com.kleinfelter.model.Address"/>
+
+Create src/main/webapp/WEB-INF/applicationContext.xml containing:
+<?xml version="1.0" encoding="UTF-8"?>   
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">   
+  
+<bean id="addressManager" class="org.appfuse.service.impl.GenericManagerImpl">        
+    <constructor-arg>            
+        <bean class="org.appfuse.dao.hibernate.GenericDaoHibernate" autowire="byType">                
+            <constructor-arg value="com.kleinfelter.model.Address"/>            
+        </bean>        
+    </constructor-arg>    
+</bean>  
+<bean id="addressAction" class="com.kleinfelter.webapp.action.AddressAction" scope="prototype">   
+    <property name="addressManager" ref="addressManager"/>   
+</bean> 
+</beans>  
+ 
+
+Create C:\code\HelloAppFuse\src\main\java\com\kleinfelter\webapp\action\AddressAction.java  containing:
+package com.kleinfelter.webapp.action;   
+  
+import org.appfuse.webapp.action.BaseAction;   
+import com.kleinfelter.model.Address;   
+import org.appfuse.service.GenericManager;   
+  
+import java.util.List;   
+  
+public class AddressAction extends BaseAction {   
+    private GenericManager<Address, Long> addressManager;   
+    private List addresses;
+    private Address address;   
+    private Long id;   
+      
+    public void setId(Long id) {   
+        this.id = id;   
+    }   
+      
+    public Address getAddress() {   
+        return address;   
+    }   
+      
+    public void setAddress(Address address) {   
+        this.address = address;   
+    }   
+  
+    public void setAddressManager(GenericManager<Address, Long> addressManager) {   
+        this.addressManager = addressManager;   
+    }   
+  
+    public List getAddresses() {   
+        return addresses;   
+    }   
+  
+    public String list() {   
+        addresses = addressManager.getAll();   
+        return SUCCESS;   
+    }   
+    public String delete() {   
+        addressManager.remove(address.getId());   
+        saveMessage(getText("address.deleted"));   
+        return SUCCESS;   
+    }   
+  
+    public String edit() {   
+        if (id != null) {   
+            address = addressManager.get(id);   
+        } else {   
+        	address = new Address();   
+        }   
+        return SUCCESS;   
+    }   
+  
+    public String save() throws Exception {   
+        if (cancel != null) {   
+            return "cancel";   
+        }   
+  
+        if (delete != null) {   
+            return delete();   
+        }   
+  
+        boolean isNew = (address.getId() == null);   
+  
+        addressManager.save(address);   
+  
+        String key = (isNew) ? "address.added" : "address.updated";   
+        saveMessage(getText(key));   
+  
+        if (!isNew) {   
+            return INPUT;   
+        } else {   
+            return SUCCESS;   
+        }   
+    }  
+}  
+
+
+
+Create a src/main/webapp/WEB-INF/pages/addressList.jsp containing:
+
+<%@ include file="/common/taglibs.jsp"%>   
+  
+<head>   
+    <title><fmt:message key="addressList.title"/></title>   
+    <content tag="heading"><fmt:message key="addressList.heading"/></content>   
+</head>   
+  
+<c:set var="buttons">   
+    <input type="button" style="margin-right: 5px"  
+        onclick="location.href='<c:url value="/editAddress.html"/>'"  
+        value="<fmt:message key="button.add"/>"/>   
+       
+    <input type="button" onclick="location.href='<c:url value="/mainMenu.html"/>'"  
+        value="<fmt:message key="button.done"/>"/>   
+</c:set>   
+  
+<c:out value="${buttons}" escapeXml="false" />   
+  
+<s:set name="addresses" value="addresses" scope="request"/>   
+<display:table name="addresses" class="table" requestURI="" id="addressList" export="true" pagesize="25">   
+    <display:column property="id" sortable="true" href="editAddress.html"    
+        paramId="id" paramProperty="id" titleKey="address.id"/>   
+    <display:column property="name" sortable="true" titleKey="address.name"/>   
+    <display:column property="street" sortable="true" titleKey="address.street"/>   
+    <display:column property="city" sortable="true" titleKey="address.city"/>   
+    <display:column property="state" sortable="true" titleKey="address.state"/>   
+    <display:column property="zip" sortable="true" titleKey="address.zip"/>   
+  
+    <display:setProperty name="paging.banner.item_name" value="address"/>   
+    <display:setProperty name="paging.banner.items_name" value="addresses"/>   
+  
+    <display:setProperty name="export.excel.filename" value="Address List.xls"/>   
+    <display:setProperty name="export.csv.filename" value="Address List.csv"/>   
+    <display:setProperty name="export.pdf.filename" value="Address List.pdf"/>   
+</display:table>   
+  
+<c:out value="${buttons}" escapeXml="false" />   
+  
+<script type="text/javascript">   
+    highlightTableRows("addressList");   
+</script>
+ 
+
+
+Edit src/main/resources/struts.xml and append after the row with "<!-- Add additional actions here -->":
+
+<action name="addresses" class="addressAction" method="list">    
+    <result>/WEB-INF/pages/addressList.jsp</result>    
+</action>  
+<action name="editAddress" class="addressAction" method="edit">    
+    <result>/WEB-INF/pages/addressForm.jsp</result>   
+    <result name="error">/WEB-INF/pages/addressList.jsp</result>   
+</action>   
+  
+<action name="saveAddress" class="addressAction" method="save">   
+    <result name="input">/WEB-INF/pages/addressForm.jsp</result>   
+    <result name="cancel" type="redirect">addresses.html</result>   
+    <result name="delete" type="redirect">addresses.html</result>   
+    <result name="success" type="redirect">addresses.html</result>   
+</action>  
+
+
+Edit src/main/resources/ApplicationResources.properties and append:
+# Kevin's stuff follows:
+address.id=Id   
+address.name=Name   
+address.street=Street
+address.city=City
+address.state=State
+address.zip=ZIP   
+address.added=Address has been added successfully.   
+address.updated=Address has been updated successfully.   
+address.deleted=Address has been deleted successfully.   
+addressList.title=Address List   
+addressList.heading=Addresses   
+addressDetail.title=Address Detail   
+addressDetail.heading=Address Information  
+
+
+Create a src/main/webapp/WEB-INF/pages/addressForm.jsp containing:
+<%@ include file="/common/taglibs.jsp"%>   
+  
+<head>   
+    <title><fmt:message key="addressDetail.title"/></title>   
+    <content tag="heading"><fmt:message key="addressDetail.heading"/></content>   
+</head>   
+  
+<s:form id="addressForm" action="saveAddress" method="post" validate="true">   
+<s:hidden name="address.id" value="%{address.id}"/>   
+  
+    <s:textfield key="address.name" required="true" cssClass="text medium"/>   
+    <s:textfield key="address.street" required="true" cssClass="text medium"/>   
+    <s:textfield key="address.city" required="true" cssClass="text medium"/>   
+    <s:textfield key="address.state" required="true" cssClass="text medium"/>   
+    <s:textfield key="address.zip" required="true" cssClass="text medium"/>   
+  
+    <li class="buttonBar bottom">            
+        <s:submit cssClass="button" method="save" key="button.save"/>   
+        <c:if test="${not empty person.id}">    
+            <s:submit cssClass="button" method="delete" key="button.delete" onclick="return confirmDelete('address')"/>   
+        </c:if>   
+        <s:submit cssClass="button" method="cancel" key="button.cancel"/>   
+    </li>   
+</s:form>   
+  
+<script type="text/javascript">   
+    Form.focusFirstElement($("addressForm"));   
+</script>  
+
+
+Browse to http://localhost:8080/addresses.html (login is mraible/tomcat)

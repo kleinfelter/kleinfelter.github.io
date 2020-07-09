@@ -1,0 +1,13 @@
+from django.db import models
+
+class Address(models.Model):
+    name = models.CharField(maxlength=80)
+    street = models.CharField(maxlength=80)
+    city = models.CharField(maxlength=80)
+    state = models.CharField(maxlength=2)
+    zip = models.CharField(maxlength=10)
+    phone = models.CharField(maxlength=16)
+    def __str__(self):
+        return self.name
+    class Admin:
+        pass 

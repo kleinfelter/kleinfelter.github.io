@@ -1,0 +1,5 @@
+DATABASE_ENGINE='mysql'
+DATABASE_NAME'addressbook_development'
+DATABASE_USER='root'
+DATABASE_PASSWORD=''
+DATABASE_HOST=''
