@@ -1,5 +1,6 @@
 ---
 title: Too Much "Security"
+layout: post
 ---
 
 Today, I wanted to download my financial accounts into Quicken.  I entered my password to login to my Macbook.  (My Macbook disk is encrypted, so all passwords after this point are silly.)

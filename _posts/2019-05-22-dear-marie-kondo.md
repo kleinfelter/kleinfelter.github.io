@@ -1,5 +1,6 @@
 ---
 title: Dear Marie Kondo
+layout: post
 ---
 
 Dear Marie Kondo,

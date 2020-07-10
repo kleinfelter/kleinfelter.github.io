@@ -1,5 +1,6 @@
 ---
 title: Checklist in LibreOffice
+layout: post
 ---
 
 Sometimes I need an outline/bulleted list which looks like a checklist.  Here's how to create a checkbox bullet in LibreOffice (on the Mac).

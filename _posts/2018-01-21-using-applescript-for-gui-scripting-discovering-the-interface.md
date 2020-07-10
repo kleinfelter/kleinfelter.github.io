@@ -1,5 +1,6 @@
 ---
 title: Using AppleScript for GUI Scripting - Discovering the Interface
+layout: post
 ---
 
 Sometimes you want to script a Mac OS X app, and you can't really do it via the dictionary.  At that point, you revert to something called "GUI scripting."  You automate the app's user interface via the Accessibility interface.  This is similar to what Autohotkey users do for Windows PCs.

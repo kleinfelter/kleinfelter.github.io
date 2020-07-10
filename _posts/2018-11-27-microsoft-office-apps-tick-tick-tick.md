@@ -1,5 +1,6 @@
 ---
 title: Microsoft Office Apps - Tick, Tick, Tick
+layout: post
 ---
 
 For no apparent reason, most of my Office 365 apps started ticking about once per second.  Tick, tick, tick.  The ticking would stop several seconds to minutes after I exited the app.  It happened even when I launched the apps in "safe mode."  It affected Word, Excel, Access, and Powerpoint, but not Outlook.  (I didn't try Publisher or the other, lesser Office apps.)

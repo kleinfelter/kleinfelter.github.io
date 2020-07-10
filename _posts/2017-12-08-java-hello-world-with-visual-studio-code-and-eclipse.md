@@ -1,5 +1,6 @@
 ---
 title: Java Hello World With Visual Studio Code and Eclipse
+layout: post
 ---
 
 ## Hello World in Java with Visual Studio Code

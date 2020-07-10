@@ -1,3 +1,7 @@
+---
+title: Tiddlywiki with Docker on Macbook
+layout: post
+---
 ## Tiddlywiki on Node.js With Docker on My Macbook
 
 CAUTION: I haven't implemented this with live data yet.  I decided it was too much change at once.  (I'm a TW Classic user.)  The staged implementation plan is:

@@ -1,5 +1,6 @@
 ---
 title: How to Pull-down Refresh on a Kindle Fire
+layout: post
 ---
 
 I use Nirvana from nirvanahq.com for my tasks list. On an Android phone, it has a nice Sync icon. On a Kindle Fire Android tablet, there is no Sync icon.  Here's how to make it refresh.

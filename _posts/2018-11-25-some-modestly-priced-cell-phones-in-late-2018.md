@@ -1,5 +1,6 @@
 ---
 title: Some Modestly Priced Cell Phones in Late 2018
+layout: post
 ---
 
 ### General Notes

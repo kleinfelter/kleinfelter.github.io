@@ -1,5 +1,6 @@
 ---
 title: Leaving LastPass
+layout: post
 ---
 
 I'm leaving LastPass.  I was uncomfortable when LogMeIn bought them.  Then it started flaking out.  Little things, like crashing after login; the Mac version saying it was installing the binary shim but not actually doing it.  

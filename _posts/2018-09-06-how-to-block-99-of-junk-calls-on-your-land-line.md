@@ -1,5 +1,6 @@
 ---
 title: How to Block 99% of Junk Calls on Your Land Line
+layout: post
 ---
 
 Here's a way to block 99% of robocalls, political calls, sales calls and surveys to your land line.  Please read the whole thing because there are some surprises in it.

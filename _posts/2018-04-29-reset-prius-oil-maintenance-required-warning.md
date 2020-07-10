@@ -1,5 +1,6 @@
 ---
 title: Reset Prius Oil Maintenance Required Warning
+layout: post
 ---
 
 At some point, Toyota changed the oil-change interval on my 2010 Prius from 5,000 miles to 10,000 miles, but they didn't update the firmware, so it still shows "Oil Maintenance Required" after 5000.  Here's how to reset the warning:

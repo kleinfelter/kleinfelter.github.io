@@ -1,5 +1,6 @@
 ---
 title: How to Revoke an Alexa Skill Account Link
+layout: post
 ---
 
 Many Alexa skills want you to "link accounts."  Often, this involves connecting to your Amazon account via OAuth.  Later, you may wish to revoke this access.

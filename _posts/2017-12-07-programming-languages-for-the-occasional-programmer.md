@@ -1,5 +1,6 @@
 ---
 title: Programming Languages for the Occasional Programmer
+layout: post
 ---
 
 *Work in progress (a 'living document')*:

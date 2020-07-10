@@ -1,5 +1,6 @@
 ---
 title: Podcatcher With Sync
+layout: post
 ---
 
 I wanted to use a podcast client which would sync across devices.  i.e. I could be playing a podcast on my phone while walking, pause it on my phone, resume it on my laptop, pause it on my laptop, and resume it on Alexa.

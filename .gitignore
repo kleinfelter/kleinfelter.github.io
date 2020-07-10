@@ -9,3 +9,4 @@ _site
 *.swo
 vendor
 .sass-cache
+dot-git-deleteme

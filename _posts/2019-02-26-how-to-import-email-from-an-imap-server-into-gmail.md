@@ -1,5 +1,6 @@
 ---
 title: How to Import Email From an IMAP Server Into Gmail
+layout: post
 ---
 
 GMail has a helpful import-from-POP3 function, to bring your old email when you migrate to GMail.  But I wanted to import from a server which supports only webmail and IMAP.  Here's how:

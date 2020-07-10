@@ -1,45 +1,60 @@
 # Jekyll configuration
 
- name: Input Jam
- description: When my printer says 'Input Jam,' is it hungry?
- title: Input Jam
+name: Input Jam
+description: When my printer says 'Input Jam,' is it hungry?
+title: Input Jam
 
- # url is currently only used only for the RSS feed in feed.xml AND for auto redirects
- url: http://kleinfelter.com
+# url is currently only used only for the RSS feed in feed.xml AND for auto redirects
+url: http://kleinfelter.com
 
- # baseurl will often be '', but for a project page on gh-pages, it needs to
- # be the project name.
- # *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
- #     run it like so: jekyll serve --baseurl=''
- #baseurl: /jekyll-clean
- baseurl: ''
+# baseurl will often be '', but for a project page on gh-pages, it needs to
+# be the project name.
+# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
+#     run it like so: jekyll serve --baseurl=''
+#baseurl: /jekyll-clean
+baseurl: ''
 
- # This can be '' to hide the Github nav button
- github: ''
+# This can be '' to hide the Github nav button
+github: ''
 
- # Set this to your UA-# value, or '' to disable the block completely
- gaaccount: ''
+# Set this to your UA-# value, or '' to disable the block completely
+gaaccount: ''
 
- # The 'comments' setting enables comments. You'll need to select either
- # disqus or isso below to choose a comment system. Individual posts can
- # override 'comments' to disable on a post-by-post basis.
- comments: true
+# The 'comments' setting enables comments. You'll need to select either
+# disqus or isso below to choose a comment system. Individual posts can
+# override 'comments' to disable on a post-by-post basis.
+comments: true
 
- # Set this to your public isso URL to enable comments via isso. Set to '' to disable isso.
- isso: ''
+# Set this to your public isso URL to enable comments via isso. Set to '' to disable isso.
+isso: ''
 
- # Set this to your disqus shortname to enable comments via disqus. Set to '' to disable disqus.
- disqus: ''
+# Set this to your disqus shortname to enable comments via disqus. Set to '' to disable disqus.
+disqus: ''
 
- permalink: /:title
- paginate: 9
- highlighter: rouge
- markdown: kramdown
- # gems: ['jekyll-paginate', 'jekyll-redirect-from', 'jekyll-admin']
- plugins: ['jekyll-paginate', 'jekyll-redirect-from', 'jekyll-admin']
- exclude: ['README.md', 'LICENSE', 'vendor', 'readme-kpk.txt']
- safe: true
- whitelist: ['jekyll-redirect-from', 'jekyll-paginate']
- include: ["_pages", "_downloads"]
- port: 4000
- encoding: utf-8
+permalink: /:title
+paginate: 9
+highlighter: rouge
+markdown: kramdown
+# gems: ['jekyll-paginate', 'jekyll-redirect-from', 'jekyll-admin']
+plugins: ['jekyll-redirect-from', 'jekyll-admin']
+exclude: ['README.md', 'LICENSE', 'vendor', 'readme-kpk.txt']
+safe: true
+whitelist: ['jekyll-redirect-from', 'jekyll-paginate']
+include: ["_pages", "_downloads"]
+port: 4000
+encoding: utf-8
+
+# front matter defaults
+defaults:
+  - scope:
+      type: posts
+      path: ''
+    values:
+      layout: 'post'
+      tags: []
+  - scope:
+      path: ''
+      type: pages
+    values:
+      layout: 'page'
+

@@ -1,5 +1,6 @@
 ---
 title: Windows Batch File Format Date as YYYY.MM.DD
+layout: post
 ---
 
 I often need a variable containing a yyyy.mm.dd date in a Windows batch file.  Instead of figuring it out anew each time, use this code:

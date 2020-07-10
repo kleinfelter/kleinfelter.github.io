@@ -27,5 +27,6 @@ services:
 
 
         command: jekyll serve --port 4002 -H 192.168.8.10 --watch --incremental
+       #command: jekyll serve --port 4002 -H 192.168.8.10 --watch --incremental --verbose
        #command: jekyll build
        #command: sleep 50000

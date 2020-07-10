@@ -1,5 +1,6 @@
 ---
 title: Setting Up Eclipse
+layout: post
 ---
 
 Setting up Eclipse for Java, Python, and Clojure

@@ -1,5 +1,6 @@
 ---
 title: Notes on Scanning With Linux
+layout: post
 ---
 
 I *frequently* use a Fujitsu sheet-feed scanner with my MacBook.  Here are some notes about how I would go about cobbling together a scan-to-text-PDF solution with Linux.  I don't think it would result in a comparable user experience, but if I *had* to scan 10 pages into Linux 1000 times, here are some helpful pointers:

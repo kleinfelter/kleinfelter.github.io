@@ -1,5 +1,6 @@
 ---
 title: Markdown Acid Test Page
+layout: post
 ---
 
 These are the Markdown forms I use:

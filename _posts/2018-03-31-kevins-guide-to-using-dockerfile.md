@@ -1,3 +1,8 @@
+---
+title: Kevin's Guide to Using Dockerfile
+layout: post 
+---
+
 ## Kevin's Guide to Using Dockerfile and docker-compose.yml
 
 and generaly, how to docker-enable an application.

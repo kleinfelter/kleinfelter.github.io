@@ -1,5 +1,6 @@
 ---
 title: Turn Off Notifications for SMS From One Contact
+layout: post
 ---
 
 I wanted to turn off notifications for text messages from some senders.  This has changed over the years.  Here's how it works on my phone today.  I think I'm on Android 8 (Oreo).

@@ -1,5 +1,6 @@
 ---
 title: Tiddlywiki vs Jekyll for PKB
+layout: post
 ---
 
 Due to increasing browser security and it having become abandonware, I'm going to move away from Tiddlywiki Classic.  I tried using it in a .hta file, but IE has some problems with its JavaScript and I'm unwilling to fix the source myself.

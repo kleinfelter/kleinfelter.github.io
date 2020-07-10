@@ -1,3 +1,7 @@
+---
+title: Tiddlywiki Without Docker on Macbook
+layout: post
+---
 ## Tiddlywiki on Node.js Without Docker on My Macbook
 
 Here's my how-to for how I set up plain old Tiddlywiki on my Macbook.  My plan is to

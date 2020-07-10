@@ -1,5 +1,6 @@
 ---
 title: Outlook 2016 Sending Empty Emails
+layout: post
 ---
 
 My Outlook started sending empty emails.  The really annoying thing was that I could spend an hour composing the perfect email, hit Send, and it would strip the content before sending.  The email in the Sent folder was devoid of content too.  Gone!

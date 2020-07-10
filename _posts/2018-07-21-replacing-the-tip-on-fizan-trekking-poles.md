@@ -1,5 +1,6 @@
 ---
 title: Replacing the Tip on Fizan Trekking Poles
+layout: post
 ---
 
 I have a set of Fizan Compact 4 Trekking Poles.  (I ordered the Compact 3, and was disappointed to receive the heavier Compact 4.)  I snapped off the tip.

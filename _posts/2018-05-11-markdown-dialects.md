@@ -1,5 +1,6 @@
 ---
 title: Markdown Dialects
+layout: post
 ---
 
 Markdown is a vague concept, not a specific markup language.  That's a problem for long-life content.  If your Markdown parser of choice reaches end-of-life, your content may render poorly in its successor.

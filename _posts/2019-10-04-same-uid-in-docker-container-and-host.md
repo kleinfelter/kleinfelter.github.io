@@ -1,5 +1,6 @@
 ---
 title: Same UID in Docker Container and Host
+layout: post
 ---
 
 Sometimes, it is convenient to have a UID in a Docker container match the UID in the host.  You can't do it all the time and it isn't everyone's cup of tea, but here's how I made my MySQL user ID and gr

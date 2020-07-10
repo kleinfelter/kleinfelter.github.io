@@ -1,8 +1,9 @@
 ---
 title: Choosing a Bank
+layout: post
 ---
 
-I recently had occasion to take a close look at my bank.  Nothing *wrong* with my bank per se, but I chose it about 30 years ago and my situation (and banking) has changed over the years.
+I recently had occasion to take a close look at my bank.  Nothing *wrong* with my bank per se, but I chose it about 30 years ago and my situation and banking has changed over the years.
 
 #### I want:
 

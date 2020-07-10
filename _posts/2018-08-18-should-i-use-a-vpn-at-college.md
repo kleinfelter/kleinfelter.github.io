@@ -1,5 +1,6 @@
 ---
 title: Should I Use a VPN at College?
+layout: post
 ---
 
 *I've moved away to college.  When should I be using a VPN?*

@@ -1,5 +1,6 @@
 ---
 title: Whooshing From Chrome to Safari and Back
+layout: post
 ---
 
 Chrome works better for me than Safari, particularly when I have many, many tabs open.  However, when I run my Macbook on batteries, Chrome drains batteries too fast, so I'd like to use Safari when I'm on battery power.  I created a couple of Applescripts to move my open tabs from Chrome to Safari and vice versa.

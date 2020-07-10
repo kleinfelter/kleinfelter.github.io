@@ -26,5 +26,5 @@ created: 1193343079
     <li>Open the Services applet (from Control Panel/Administrative Tools) and change the OpenSSH service to use the sshd account. </li>
     <li>Stop and start the OpenSSH service. </li>
   </ol>
-  <p>At this point you've got password login.&nbsp; There is more work to be done to enable PKI-based login.&nbsp; See C:\Documents and Settings\kk4056.cingularus\Desktop\ssh-server-on-windows-server-2003.htm (it works on Windows XP and also on Windows Server 2003).</p>
+  <p>At this point you've got password login.&nbsp; There is more work to be done to enable PKI-based login.</p>
   <p>&nbsp;</p>

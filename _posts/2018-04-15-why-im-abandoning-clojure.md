@@ -1,5 +1,6 @@
 ---
 title: Why I'm Abandoning Clojure
+layout: post
 ---
 
 Clojure is a lovely language idea.  It is elegant.  It is clever.

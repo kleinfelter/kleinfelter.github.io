@@ -1,5 +1,6 @@
 ---
 title: node.js TiddlyWiki to Joplin
+layout: post
 ---
 
 ## Migrating from TiddlyWiki to Joplin

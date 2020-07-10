@@ -1,5 +1,6 @@
 ---
 title: Firefox Portable Incredibly Slow
+layout: post
 ---
 
 ## Firefox Portable Launches and Loads Very Slow
