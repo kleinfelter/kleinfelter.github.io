@@ -1,4 +1,4 @@
-FROM jekyll/jekyll:3.8.6
+FROM jekyll/jekyll:4.0
 
 ENV APP_HOME /srv/jekyll
 #RUN mkdir $APP_HOME
