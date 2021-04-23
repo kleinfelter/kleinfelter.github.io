@@ -1,7 +1,6 @@
 ---
 title: Why I'm Moving to IDrive
 ---
-
 ... despite it not meeting my requirements.
 
 I need sync among my Win/Mac/Linux machines. I need off-site backup. I need on-site backup. I actually have all this right now, but it has too big a footprint.
