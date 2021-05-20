@@ -1,32 +1,20 @@
-version: "3.2"                    # Using version 3 docker-compose file format.
+version: "3.2"                    # Using version 3 docker-compose
 services:
     kleinfelter:
         build: .
-        network_mode: "host"
+        network_mode: "bridge"
         container_name: kleinfelter
-        #ports:
+        restart: unless-stopped
+        ports:
             # host-port:container-port
-            #- 4002:4000
+            - "127.0.0.1:4002:4002"
         volumes:
             - type: bind
               source: "."
               target: "/srv/jekyll"
-
-#           - type: bind
-#             source: "/etc/timezone"
-#             target: "/etc/timezone"
-#             read_only: true
-
-#           - type: bind 
-#             source: "/etc/localtime"
-#             target: "/etc/localtime"
-#             read_only: true
         environment:
         - TZ
 
-
-
-        command: jekyll serve --port 4002 -H 192.168.8.10 --watch --incremental
+        command: jekyll serve --port 4002 -H 0.0.0.0 --watch --incremental
        #command: jekyll serve --port 4002 -H 192.168.8.10 --watch --incremental --verbose
-       #command: jekyll build
-       #command: sleep 50000
+
