@@ -29,6 +29,14 @@ Here's how to set up password-free ssh.
     * `chmod 600 .ssh/authorized_keys`
 * On the client, run `ssh yourId@yourServer`; and it should login without a password.
 
+**Windows Is Different**:
+
+* With Microsoft's "OpenSSH Server":
+    * If you are a non-admin user, your authorized_keys file is C:\Users\USERID\.ssh\authorized_keys.
+    * If you are logging in as an admin user, your authorized_keys file is C:\ProgramData\ssh\administrators_authorized_keys.
+        * The ACL on this file must only allow access to Administrators and System.
+            * (Right-click on the file in Explorer. Go into security. Disable inheritance. Change the permissions.)
+
 **Debugging**:
 
 If you still get a password prompt after you set this up:

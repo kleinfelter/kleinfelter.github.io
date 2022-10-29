@@ -1,5 +1,5 @@
 ---
-title: TurboTax Student Information Worksheet, Lin 18, Used for Exclusion
+title: TurboTax Student Information Worksheet, Line 18, Used for Exclusion
 ---
 
 There are two kinds of TurboTax users -- those who just complete the interview as best they can, trusting TurboTax to get everything right, and those who want to understand every number so they're.  This story is for the latter. It deals with the "Part VI - Education Expenses" section of the worksheet.
