@@ -55,7 +55,7 @@ Conceptually, you will ssh to the Windows ssh server, and then you'll ssh from t
 
 * Install ssh Server on Windows, per the applicable link above. Test it by connecting from a Command window by running `ssh localhost`. Then go to another machine and ssh into your Windows machine. Confirm it works. Remember to use your Windows PASSWORD and not your Windows PIN.
 * Install sshd on WSL, per the applicable link above. Test it by running `ssh localhost` from a bash shell. Then test by running `ssh localhost` from a Command prompt. (You should get a bash prompt when you connect.)
-* On WSL, edit /etc/ssh/ssh_config and change `#   Port 22` to `Port 2022`. Restart sshd, and test by running `ssh localhost -p 2022` -- first from bash and then from CMD on your Windows machine.
+* On WSL, edit /etc/ssh/sshd_config (NOT ssh_config -- sshd_config) and change `#   Port 22` to `Port 2022`. Restart sshd, and test by running `ssh localhost -p 2022` -- first from bash and then from CMD on your Windows machine.
 * Run a proof-of-concept: ssh from another machine to your Windows machine; then ssh from your Windows machine to WSL. Make sure it works before proceeding. (We will automate the jump-server relay connection, to make it transparent.)
 
 #### Method 3 Part 2: Automating the Jump Server
