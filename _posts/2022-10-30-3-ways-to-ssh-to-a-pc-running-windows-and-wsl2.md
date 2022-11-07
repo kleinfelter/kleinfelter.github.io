@@ -124,3 +124,13 @@ This tells ssh to save certificates in known_hosts using alternative names for t
 
 [Set up password-free login](https://kleinfelter.com/ssh-without-a-password) on both the jump server and HOSTNAME-wsl. You *definitely* want it enabled on the jump server.
 Note that the id_rsa.pub on your jump server is used to gain passwordless access to HOSTNAME-wsl.
+
+#### sshd Quits After One Connect
+
+sshd sometimes quits. I *think* the issue is that when there are no foreground processes running WSL shuts down. I'm not at all certain about that.
+
+I used Task Scheduler to run "C:\Windows\system32\wsl.exe sudo cron" at the primary-user's Windows login. I also ran "sudo systemctl enable ssh" at a bash prompt. (I previously used visudo to edit sudoers, granting passwordless sudo to my primary user.) That seems to ensure that cron AND sshd are constantly running.
+
+#### Reminder About WSL Instances
+
+Each Windows user gets his own WSLs. (Not exactly, but close enough.) If you run "ssh user1@myserver" but you launch sshd as Windows user "user2", you're connecting to the wrong WSL!
