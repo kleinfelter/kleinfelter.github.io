@@ -133,4 +133,8 @@ I used Task Scheduler to run "C:\Windows\system32\wsl.exe sudo cron" at the prim
 
 #### Reminder About WSL Instances
 
-Each Windows user gets his own WSLs. (Not exactly, but close enough.) If you run "ssh user1@myserver" but you launch sshd as Windows user "user2", you're connecting to the wrong WSL!
+Each Windows user gets his own WSLs. (Not exactly, but close enough.) 
+
+If Windows user winuser1 launches WSL and starts sshd, you get a DIFFERENT file system than if winuser2 starts sshd.
+
+winuser1 can have linuxuser1 and linuxuser2, and winuser2 can have a DIFFERENT linuxuser1 and linuxuser2.
